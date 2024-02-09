@@ -17,6 +17,19 @@ $invoer[] = readline();
 echo "Geef lotto nummer 6:" . PHP_EOL;
 $invoer[] = readline();
 
+foreach ($invoer as $checkGetallen) {
+    if (!is_numeric($checkGetallen)) {
+        echo "$checkGetallen moet wel een getal zijn!";
+        exit;
+    }
+    if (($checkGetallen < 1) or ($checkGetallen > 42)) {
+        echo "De getallen moeten wel tussen de 1 en 42 zijn!";
+        exit;
+    }
+}
+
+sort($invoer);
+
 echo "Je gekozen cijfers zijn: ";
 foreach ($invoer as $getal) {
     echo $getal . " ";
@@ -27,7 +40,7 @@ for ($i = 0; $i < 6; $i++) {
 }
 sort($getLotto);
 
-echo "De trekking cijfers zijn: ";
+echo PHP_EOL . "De trekking cijfers zijn: ";
 foreach ($getLotto as $outLotto) {
     echo $outLotto . " ";
 }
