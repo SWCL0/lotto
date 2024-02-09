@@ -1,7 +1,7 @@
 <?php
 
 $invoer = array();
-$getLotto = array();
+$getLotto = array(1, 14, 24, 32, 41, 42);
 
 echo "Geef je lotto getallen (getallen moeten tussen 1 en 42 liggen)" . PHP_EOL;
 echo "Geef lotto nummer 1:" . PHP_EOL;
@@ -47,9 +47,22 @@ foreach ($getLotto as $outLotto) {
 
 $aantalGoed = array_intersect($invoer, $getLotto);
 $aantalGoedGetal = count($aantalGoed);
-echo $aantalGoedGetal;
+echo PHP_EOL;
 
-
+switch ($aantalGoedGetal) {
+    case 3:
+        echo "Je hebt 10 euro gewonnen!";
+        break;
+    case 4:
+        echo "Je hebt 1000 euro gewonnen!";
+        break;
+    case 5:
+        echo "Je hebt 100.000 euro gewonnen!";
+        break;
+    case 6:
+        echo "Je hebt 10.000.000 euro gewonnen!";
+        break;
+}
 
 
 ?>
