@@ -45,5 +45,11 @@ foreach ($getLotto as $outLotto) {
     echo $outLotto . " ";
 }
 
+$aantalGoed = array_intersect($invoer, $getLotto);
+$aantalGoedGetal = count($aantalGoed);
+echo $aantalGoedGetal;
+
+
+
 
 ?>
